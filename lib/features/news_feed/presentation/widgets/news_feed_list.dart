@@ -24,7 +24,6 @@ class NewsFeedList extends ConsumerWidget {
           itemCount: articles.length,
           itemBuilder: (context, index) {
             final article = articles[index];
-            // Dynamic Card Layout Logic
             if (index == 0) {
               return HeroCard(article: article);
             } else if (index < 3) {
@@ -49,9 +48,12 @@ class NewsFeedList extends ConsumerWidget {
       error: (error, stack) => Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text('Error: Could not load news. Please check your API key and network connection.',
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.red)),
+          // UPDATED: A more user-friendly error message.
+          child: Text(
+            'Could not load news.\nPlease check your internet connection or try a different network.',
+            textAlign: TextAlign.center,
+            style: const TextStyle(color: Colors.red, height: 1.5),
+          ),
         ),
       ),
     );

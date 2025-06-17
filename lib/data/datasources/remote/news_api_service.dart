@@ -23,11 +23,29 @@ class NewsApiService {
           .toList();
       return articles.where((article) => article.title != "[Removed]").toList();
     } on DioException catch (e) {
-      // Use kDebugMode to only print errors during development
-      if (kDebugMode) {
-        print('DioError fetching news: ${e.response?.data}');
-      }
+      if (kDebugMode) print('DioError: ${e.response?.data}');
       throw Exception('Failed to load news: ${e.message}');
+    }
+  }
+
+  // NEW: Method for searching articles.
+  Future<List<ArticleModel>> searchArticles({required String query}) async {
+    try {
+      final response = await _dio.get(
+        '/everything',
+        queryParameters: {
+          'q': query,
+          'sortBy': 'popularity',
+          'apiKey': _apiKey,
+        },
+      );
+      final articles = (response.data['articles'] as List)
+          .map((json) => ArticleModel.fromJson(json))
+          .toList();
+      return articles.where((article) => article.title != "[Removed]").toList();
+    } on DioException catch (e) {
+      if (kDebugMode) print('DioError: ${e.response?.data}');
+      throw Exception('Failed to search news: ${e.message}');
     }
   }
 }

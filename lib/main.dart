@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/core/navigation/router.dart';
 import 'package:news_app/core/theme/app_theme.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:news_app/features/notifications/presentation/services/notification_service.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -12,6 +12,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // Initialize notifications
+  await NotificationService().init();
 
   runApp(const ProviderScope(child: MyApp()));
 }
