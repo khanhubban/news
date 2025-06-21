@@ -1,9 +1,4 @@
-![Screenshot_20250621-135648](https://github.com/user-attachments/assets/e3d54565-65aa-49f4-9eb0-7be68b922f7e)
-![Screenshot_20250621-135610](https://github.com/user-attachments/assets/3c7b0af5-b1e5-4f2e-a5d1-d8396d705a60)
-![Screenshot_20250621-135524](https://github.com/user-attachments/assets/97da20ea-1fb6-40a7-bc34-3c88875e220f)
-![Screenshot_20250621-135516](https://github.com/user-attachments/assets/e82ef1c6-1da6-4e02-9e5d-39ae91df34bf)
-![Screenshot_20250621-135421](https://github.com/user-attachments/assets/d6fde109-cb7a-4345-a504-ef8ac3f9cf1e)
-![Screenshot_20250621-135400](https://github.com/user-attachments/assets/b86e0380-d11f-4570-9a3a-48831d78b5b8)
+
 # news_app
 AI-Powered News App
 An advanced, feature-rich news application built with Flutter and Riverpod. This app provides a seamless user experience with AI-powered article summaries, personalized feeds, and robust backend services powered by Firebase.
@@ -49,4 +44,5 @@ webview_flutter: To display web content.
 share_plus: For invoking the native share dialog.
 Local Storage: shared_preferences for caching summaries.
 Utilities: equatable for value equality.
+![photo-collage png](https://github.com/user-attachments/assets/49e2be70-f585-40c4-a030-f645bee961a2)
 
