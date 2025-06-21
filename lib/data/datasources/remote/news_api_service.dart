@@ -4,7 +4,7 @@ import 'package:news_app/data/models/article_model.dart';
 
 class NewsApiService {
   final Dio _dio;
-  static const String _apiKey = "2aba24949d6049e29a731818bd33e1d9";
+  static const String _apiKey = "";
 
   NewsApiService() : _dio = Dio(BaseOptions(baseUrl: "https://newsapi.org/v2"));
 
